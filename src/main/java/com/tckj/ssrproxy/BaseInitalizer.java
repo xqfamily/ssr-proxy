@@ -26,6 +26,9 @@ public class BaseInitalizer {
         initSsr();
     }
 
+    /**
+     * 初始化ssr节点
+     */
     public void initSsr(){
         if (ssrs.size()<1){/*todo 这里增加自己的ssr代理节点信息*/
             ssrs.add(new Shadowsocks("xxx.xxx.com","1111","rc4-md5","1111"));
@@ -36,6 +39,10 @@ public class BaseInitalizer {
         }
     }
 
+    /**
+     * 随机获取一个ssr节点（因为封ip隔段时间会解封所以这里随机获取）
+     * @return
+     */
     public static List<String> getSsrBash(){
         if (ssrs.size()>0){
             return ssrs.get(RandomUtils.nextInt(0,ssrs.size()-1)).getBash();

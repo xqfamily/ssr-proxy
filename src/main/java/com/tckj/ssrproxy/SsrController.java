@@ -18,15 +18,13 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/ssr")
 public class SsrController {
-
-
     /**
      * 测试当前的代理ip
      * @param port
      * @return
      */
     @GetMapping
-    public ResponseEntity p2(Integer port){
+    public ResponseEntity test(Integer port){
         port = port==null?8118:port;
         try {
             System.getProperties().setProperty("proxySet", "true");
